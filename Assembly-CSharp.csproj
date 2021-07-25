@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\PlayerController.cs" />
+     <Compile Include="Assets\Script\CameraControl.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Users/phoenixdai/UnityProject/2020.3.13f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -712,6 +713,12 @@
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Runtime">
  <HintPath>/Users/phoenixdai/UnityProject/MySunnyLand/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>/Users/phoenixdai/UnityProject/MySunnyLand/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>/Users/phoenixdai/UnityProject/MySunnyLand/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

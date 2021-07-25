@@ -106,5 +106,13 @@ void SwitchAnim()
 
 ### 镜头
 
+添加<kbd>Cinemachine</kbd>组件
 
+然后添加一个2d camera，这样main camera的所有数据都会被归并到新添加的camera中。
+
+然后通过添加一个confiner
+
+之后再background中添加polygoncollider，来规定camera的移动距离
+
+==注意：要把这个collider设置为isTrigger，不然player被弹飞了……
 
