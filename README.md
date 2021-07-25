@@ -114,5 +114,5 @@ void SwitchAnim()
 
 之后再background中添加polygoncollider，来规定camera的移动距离
 
-==注意：要把这个collider设置为isTrigger，不然player被弹飞了……
+==注意：要把这个collider设置为isTrigger，不然player被弹飞了……==
 
