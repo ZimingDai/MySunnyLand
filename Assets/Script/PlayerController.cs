@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Animator anim;
+    private Rigidbody2D rb;
+    private Animator anim;
+    
     public LayerMask ground;
     public Collider2D coll;
     public float speed = 10f;
@@ -16,7 +17,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //the game begin, import the things to rb,anim
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
      
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
             anim.SetBool("isJumping", true);
+           
         }
     }
     void SwitchAnim()
