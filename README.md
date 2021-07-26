@@ -139,3 +139,26 @@ private void OnTriggerEnter2D(Collider2D collision)// 这个参数
 当做好一个Sprite，就可以反向拖回到文件夹中，成为一个预置
 
 这样下一次使用，参数都不变，**不需要进一步设置**
+
+
+
+### Material
+
+在Create 2D中选择 <kbd>Physical Material 2D</kbd>
+
+然后可以更改摩擦力和弹力
+
+
+
+### UI
+
+**UI最重要的是Canvas**
+
+所以先创建：UI：Canvas
+
+之后再在Canvas中继续创建需要的UI
+
+> Canvas会自动跟着Camera走
+>
+> 但是里面的UI可能会出边界，所以在UI中Rect Transform中确定其位置。
+

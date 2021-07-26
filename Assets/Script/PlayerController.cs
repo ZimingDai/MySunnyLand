@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public int cherryNum = 0;
     public int gemNum = 0;
+
+    public Text CherryNum;
+    public Text GemNum;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,7 @@ public class PlayerController : MonoBehaviour
         //the game begin, import the things to rb,anim
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
     }
 
      
@@ -50,7 +56,7 @@ public class PlayerController : MonoBehaviour
         }
         
         //Player jump
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
             anim.SetBool("isJumping", true);
@@ -77,15 +83,17 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)// 这个参数
     {
-        if (collision.tag == "Collection")
+        if (collision.CompareTag("Collection"))
         {
             Destroy(collision.gameObject);//销毁游戏体
             cherryNum += 1;
+            CherryNum.text = cherryNum.ToString();
         }
-        else if (collision.tag == "Gem_collection")
+        else if (collision.CompareTag("Gem_collection"))
         {
             Destroy(collision.gameObject);
             gemNum += 1;
+            GemNum.text = gemNum.ToString();
         }
     }
 }
