@@ -162,3 +162,9 @@ private void OnTriggerEnter2D(Collider2D collision)// 这个参数
 >
 > 但是里面的UI可能会出边界，所以在UI中Rect Transform中确定其位置。
 
+----
+
+
+
+注意，当我们在其他的地方想让Player有其他的反弹动作，一定要注意在update中，movement会一直调用，给新的vector2，所以必须先让movement不工作，再调用函数。
+

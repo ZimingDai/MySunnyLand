@@ -21,7 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public Text CherryNum;
     public Text GemNum;
-    
+
+    private bool isHurt;// default is false
     
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,10 @@ public class PlayerController : MonoBehaviour
      
     void FixedUpdate()
     {
-        Movement();
+        if (!isHurt)
+        { 
+            Movement();
+        }
         SwitchAnim();
     }
 
@@ -73,6 +77,16 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isFalling", true);
                 anim.SetBool("isJumping", false);
             }
+        }else if (isHurt)
+        {
+            anim.SetBool("isHurt", true);
+            anim.SetFloat("running", 0);
+            if (math.abs(rb.velocity.x) < 0.1f)
+            {
+                anim.SetBool("isHurt", false);
+                anim.SetBool("isIdle", true);
+                isHurt = false;
+            }   
         }
         else if (coll.IsTouchingLayers(ground))
         {
@@ -94,6 +108,28 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             gemNum += 1;
             GemNum.text = gemNum.ToString();
+        }
+    }
+    
+    // destroy enemies
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (anim.GetBool("isFalling"))
+            {
+                Destroy(collision.gameObject);
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
+                anim.SetBool("isJumping", true);
+            } else if (transform.position.x < collision.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(-5, rb.velocity.y);
+                isHurt = true;
+            } else if (transform.position.x > collision.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(5, rb.velocity.y);
+                isHurt = true;
+            }
         }
     }
 }
