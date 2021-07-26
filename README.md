@@ -114,5 +114,28 @@ void SwitchAnim()
 
 之后再background中添加polygoncollider，来规定camera的移动距离
 
-==注意：要把这个collider设置为isTrigger，不然player被弹飞了……==
+**注意：要把这个collider设置为isTrigger，不然player被弹飞了……**
 
+
+
+### 标签
+
+Tag，用来检测是否碰撞的时候使用，不需要新建layer
+
+```c#
+private void OnTriggerEnter2D(Collider2D collision)// 这个参数
+    {
+        if (collision.tag == "Collection")
+        {
+            Destroy(collision.gameObject);//销毁游戏体
+        }
+    }
+```
+
+
+
+### Prefabs
+
+当做好一个Sprite，就可以反向拖回到文件夹中，成为一个预置
+
+这样下一次使用，参数都不变，**不需要进一步设置**

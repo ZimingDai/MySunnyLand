@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -13,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Collider2D coll;
     public float speed = 10f;
     public float jumpForce;
+    public int cherryNum = 0;
+    public int gemNum = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -68,6 +72,20 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("isFalling", false);
             anim.SetBool("isIdle", true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)// 这个参数
+    {
+        if (collision.tag == "Collection")
+        {
+            Destroy(collision.gameObject);//销毁游戏体
+            cherryNum += 1;
+        }
+        else if (collision.tag == "Gem_collection")
+        {
+            Destroy(collision.gameObject);
+            gemNum += 1;
         }
     }
 }

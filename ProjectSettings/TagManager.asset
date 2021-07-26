@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Collection
+  - Gem_collection
   layers:
   - Default
   - TransparentFX
@@ -44,6 +46,15 @@ TagManager:
   - name: BackGround
     uniqueID: 3964424365
     locked: 0
+  - name: Environment
+    uniqueID: 686126181
+    locked: 0
+  - name: Player
+    uniqueID: 3105549027
+    locked: 0
   - name: ForeGround
     uniqueID: 1166884507
+    locked: 0
+  - name: Ground
+    uniqueID: 2748556597
     locked: 0
