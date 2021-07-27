@@ -52,9 +52,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\FrogController.cs" />
      <Compile Include="Assets\Script\CameraControl.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
-     <Compile Include="Assets\Script\FrogController.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Users/phoenixdai/UnityProject/2020.3.13f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

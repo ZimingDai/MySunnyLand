@@ -168,3 +168,43 @@ private void OnTriggerEnter2D(Collider2D collision)// 这个参数
 
 注意，当我们在其他的地方想让Player有其他的反弹动作，一定要注意在update中，movement会一直调用，给新的vector2，所以必须先让movement不工作，再调用函数。
 
+
+
+### EnemyAI
+
+Enemy的移动范围可以添加两个Empty项目，然后在左上角更改颜色使其可见。
+
+子项目会继承父项目的移动。
+
+解决方法：
+
+1. 断绝继承关系。
+
+```c#
+transform.DetachChildren();
+```
+
+​	**但是：如果enemy过多就会出现很多的left和right**
+
+
+
+2. 获得x值，然后直接销毁left和right
+
+```c#
+ void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        //断绝子关系
+        // transform.DetachChildren();
+        leftx = leftPoint.position.x;
+        rightx = rightPoint.position.x;
+        Destroy(leftPoint.gameObject);
+        Destroy(rightPoint.gameObject);
+    }
+```
+
+
+
+#### Event
+
+为了让动画播完再进行下一次动画，可以在Animation中添加Event，Event可以调用函数，将Event放在你想要的帧上就可以实现在想要的地方做下一个动作。

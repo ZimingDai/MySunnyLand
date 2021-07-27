@@ -70,6 +70,11 @@ public class PlayerController : MonoBehaviour
     void SwitchAnim()
     {
         anim.SetBool("isIdle", false);
+
+        if (rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
+        {
+            anim.SetBool("isFalling", true);
+        }
         if (anim.GetBool("isJumping"))
         {
             if (rb.velocity.y < 0)
@@ -123,11 +128,11 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isJumping", true);
             } else if (transform.position.x < collision.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(-5, rb.velocity.y);
+                rb.velocity = new Vector2(-8, rb.velocity.y);
                 isHurt = true;
             } else if (transform.position.x > collision.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(5, rb.velocity.y);
+                rb.velocity = new Vector2(8, rb.velocity.y);
                 isHurt = true;
             }
         }
