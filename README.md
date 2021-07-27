@@ -102,7 +102,9 @@ void SwitchAnim()
 
 
 
-
+> 如果这个Animation是每一个State都可以到达，就直接用AnyState连接
+>
+> trigger也是一个parameter，就是简单触发器
 
 ### 镜头
 
@@ -208,3 +210,16 @@ transform.DetachChildren();
 #### Event
 
 为了让动画播完再进行下一次动画，可以在Animation中添加Event，Event可以调用函数，将Event放在你想要的帧上就可以实现在想要的地方做下一个动作。
+
+
+
+#### Class
+
+不同文件中的文件调用。
+
+```c#
+FrogController frog = collision.gameObject.GetComponent<FrogController>()
+```
+
+collision中的gameobject获得`frogcontroller`的所有内容
+
