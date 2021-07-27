@@ -121,10 +121,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            FrogController frog = collision.gameObject.GetComponent<FrogController>();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (anim.GetBool("isFalling"))
             {
-                frog.JumpOn();
+                enemy.JumpOn();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
                 anim.SetBool("isJumping", true);
             } else if (transform.position.x < collision.gameObject.transform.position.x)

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrogController : MonoBehaviour
+public class FrogController : Enemy
 {
     private Rigidbody2D rb;
-    private Animator anim;
+    // private Animator anim;
     private Collider2D coll;
     public LayerMask ground;
     public Transform leftPoint;
@@ -17,11 +17,13 @@ public class FrogController : MonoBehaviour
 
     private float leftx, rightx;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        // anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        
         //断绝子关系
         // transform.DetachChildren();
         leftx = leftPoint.position.x;
@@ -85,15 +87,5 @@ public class FrogController : MonoBehaviour
         {
             anim.SetBool("isFalling", false);
         }
-    }
-
-    void Death()
-    {
-        Destroy(gameObject);
-    }
-
-    public void JumpOn()
-    {
-        anim.SetTrigger("death");
     }
 }

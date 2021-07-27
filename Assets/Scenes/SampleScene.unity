@@ -2075,6 +2075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8037708855903700709, guid: 970fa11cdd07d4d75b959e866e81022d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970fa11cdd07d4d75b959e866e81022d, type: 3}
 --- !u!1 &1473274540

@@ -223,3 +223,25 @@ FrogController frog = collision.gameObject.GetComponent<FrogController>()
 
 collision中的gameobject获得`frogcontroller`的所有内容
 
+获得父集的Start
+
+```c#
+base.Start();
+```
+
+子集能改父集的代码
+
+```c#
+//父
+protected virtual void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+//子
+protected override void Start()
+    {
+        base.Start();
+  			// 调用父类函数
+    }
+```
+
