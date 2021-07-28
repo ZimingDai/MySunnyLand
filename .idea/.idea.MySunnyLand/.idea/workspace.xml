@@ -2,38 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a73726d-f2ef-4637-b4ba-a12c41b56683" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Script/EnterDialog.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Materials/Thaleah_DemoBackground.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/ThaleahFat.fontsettings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/ThaleahFat.fontsettings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Thaleah_Demo.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Thaleah_Demo.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Thaleah_Readme.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Thaleah_PixelFont/Thaleah_Readme.pdf.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/IndoorScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/IndoorScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sunnyland/artwork/Environment/map/map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sunnyland/artwork/Environment/map/map.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sunnyland/artwork/Environment/props/door.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sunnyland/artwork/Environment/props/door.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/GridBrush/UnityEditor.Tilemaps.GridBrush.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/GridBrush/UnityEditor.Tilemaps.GridBrush.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ProtocolInstance.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ProtocolInstance.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/MainStageHierarchy/4d/4d2a36d9faf65734f0bbefb3ee623532.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/4c/4cdd0b158402aef33a736fc6351b6f85.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/PrefabStageHierarchy/4c/4cdd0b158402aef33a736fc6351b6f85.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/8c/8cd7c613bf844de3b80696e27a479d5e.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" beforeDir="false" afterPath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,9 +43,9 @@
       <option value="$PROJECT_DIR$/Assets/Script/CameraControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/FrogController.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/Enemy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Script/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/EagleController.cs" />
       <option value="$PROJECT_DIR$/Assets/Script/EnterDialog.cs" />
+      <option value="$PROJECT_DIR$/Assets/Script/PlayerController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vnc8TadcMoS8Llj5J7t8jcawxO" />
@@ -124,7 +106,7 @@
       <workItem from="1627284334332" duration="2398000" />
       <workItem from="1627371576115" duration="5870000" />
       <workItem from="1627384355376" duration="910000" />
-      <workItem from="1627437744329" duration="291000" />
+      <workItem from="1627437744329" duration="667000" />
     </task>
     <servers />
   </component>

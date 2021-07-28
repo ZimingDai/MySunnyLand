@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         //Player move
         if (horizontalMove != 0)
         {
-            rb.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, rb.velocity.y);
+            rb.velocity = new Vector2(horizontalMove * speed * Time.fixedDeltaTime, rb.velocity.y);
             anim.SetFloat("running", math.abs(faceDirection));
         }
         if (faceDirection != 0)
