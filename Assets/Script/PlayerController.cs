@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     
     public LayerMask ground;
+    public Collider2D topColl;
     public Collider2D coll;
+    public Transform cellingCheck;
     public float speed = 10f;
     public float jumpForce;
     public int cherryNum = 0;
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isJumping", true);
            
         }
+        Crouch();
     }
     void SwitchAnim()
     {
@@ -137,5 +140,24 @@ public class PlayerController : MonoBehaviour
                 isHurt = true;
             }
         }
+    }
+
+    private void Crouch()
+    // TODO:有问题！逻辑怪怪的
+    {
+        if (!Physics2D.OverlapCircle(cellingCheck.position, 0.2f, ground))
+        {
+            if (Input.GetButtonDown("Crouch"))
+            {
+                anim.SetBool("isCrouch", true);
+                // 被启用
+                topColl.enabled = false;
+            } else if (Input.GetButtonUp("Crouch"))
+            {
+                anim.SetBool("isCrouch", false);
+                topColl.enabled = true;
+            }
+        }
+        
     }
 }

@@ -297,3 +297,13 @@ public class EnterDialog : MonoBehaviour
 
 录制Animation，在Animation中点击录制，然后再每一个关键帧中改变透明度，颜色等。
 
+
+
+### 头顶检测
+
+在头上放一个object
+
+然后用函数
+
+`Physics2D.OverlapCircle(cellingCheck.position, 0.2f, ground)`
+
