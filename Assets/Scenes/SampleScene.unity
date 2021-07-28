@@ -930,7 +930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.971626, y: 3.0080147, z: -10}
+  m_LocalPosition: {x: 22.1, y: 1.48, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1911,7 +1911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322184233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.96, y: 2.04, z: -10}
+  m_LocalPosition: {x: 22.1, y: 1.48, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1952323614}
@@ -1956,7 +1956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!60 &1358737638
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2207,6 +2207,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 970fa11cdd07d4d75b959e866e81022d, type: 3}
+--- !u!1 &1449193103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449193105}
+  - component: {fileID: 1449193104}
+  m_Layer: 0
+  m_Name: DeadLine
+  m_TagString: DeadLine
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1449193104
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449193103}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 86.09177, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1449193105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449193103}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.971925, y: -6.95, z: -1.95072}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1473274540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2604,7 @@ GameObject:
   - component: {fileID: 1636496278}
   - component: {fileID: 1636496277}
   - component: {fileID: 1636496279}
+  - component: {fileID: 1636496280}
   m_Layer: 5
   m_Name: EnterDialog
   m_TagString: Untagged
@@ -2631,6 +2689,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1636496280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636496275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a13fd9985cb34cf3800349b76d63127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1639686636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8037708855366466232, guid: 970fa11cdd07d4d75b959e866e81022d, type: 3}
@@ -6877,11 +6947,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973390317677701840, guid: 8b2eb14914d9548bda2934c0bd03375d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.96
+      value: 22.1
       objectReference: {fileID: 0}
     - target: {fileID: 2973390317677701840, guid: 8b2eb14914d9548bda2934c0bd03375d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.04
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 2973390317677701840, guid: 8b2eb14914d9548bda2934c0bd03375d, type: 3}
       propertyPath: m_LocalPosition.z

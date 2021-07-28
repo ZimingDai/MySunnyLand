@@ -6,6 +6,7 @@ using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,7 +27,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isHurt;// default is false
     
-    // Start is called before the first frame update
     void Start()
     {
         //the game begin, import the things to rb,anim
@@ -34,8 +34,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         
     }
-
-     
     void FixedUpdate()
     {
         if (!isHurt)
@@ -103,8 +101,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)// 这个参数
+    // 碰撞触发器
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        // 收集樱桃
         if (collision.CompareTag("Collection"))
         {
             Destroy(collision.gameObject);//销毁游戏体
@@ -116,6 +116,12 @@ public class PlayerController : MonoBehaviour
             Destroy(collision.gameObject);
             gemNum += 1;
             GemNum.text = gemNum.ToString();
+        }
+
+        if (collision.CompareTag("DeadLine"))
+        {
+            GetComponent<AudioSource>().enabled = false;
+           Invoke("Restart", 1f); 
         }
     }
     
@@ -145,19 +151,23 @@ public class PlayerController : MonoBehaviour
     private void Crouch()
     // TODO:有问题！逻辑怪怪的
     {
-        if (!Physics2D.OverlapCircle(cellingCheck.position, 0.2f, ground))
+        if (!Physics2D.OverlapCircle(cellingCheck.position, 0.3f, ground))
         {
-            if (Input.GetButtonDown("Crouch"))
+            if (Input.GetButton("Crouch"))
             {
                 anim.SetBool("isCrouch", true);
                 // 被启用
                 topColl.enabled = false;
-            } else if (Input.GetButtonUp("Crouch"))
+            } else
             {
                 anim.SetBool("isCrouch", false);
                 topColl.enabled = true;
             }
         }
-        
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -307,3 +307,26 @@ public class EnterDialog : MonoBehaviour
 
 `Physics2D.OverlapCircle(cellingCheck.position, 0.2f, ground)`
 
+
+
+### 游戏重置
+
+```c#
+using UnityEngine.SceneManagement;
+
+if (collision.CompareTag("DeadLine"))
+        {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+```
+
+可以用Invoke来获得延迟。
+
+
+
+#### 下一界面
+
+在File->Build Settings 中将所有场景放入，获得编号
+
+
+
