@@ -245,3 +245,21 @@ protected override void Start()
     }
 ```
 
+
+
+### Audio
+
+* Audio Listener 每个人的耳朵
+* Audio Source 音源
+* Audio Clips 声音片段
+
+> 背景音乐要放到Player中，因为镜头随着Player走。
+
+利用Audio Source，来添加AudioClip
+
+播放声音：
+
+```c#
+audio.Play();
+```
+
