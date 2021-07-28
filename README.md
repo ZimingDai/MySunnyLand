@@ -263,3 +263,37 @@ protected override void Start()
 audio.Play();
 ```
 
+### 对话框
+
+在Canvas中添加Panel
+
+在Panel中添加Text进行添加所需要的文字
+
+然后在House中制作碰撞器，为其添加Script，获得Panel的gameObject，然后如果触发就setActive(true)
+
+```c#
+public class EnterDialog : MonoBehaviour
+{
+    public GameObject enterDialog;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            enterDialog.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            enterDialog.SetActive(false);
+        }
+    }
+}
+```
+
+#### Animation
+
+录制Animation，在Animation中点击录制，然后再每一个关键帧中改变透明度，颜色等。
+
