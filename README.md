@@ -330,3 +330,21 @@ if (collision.CompareTag("DeadLine"))
 
 
 
+### 光源
+
+1. 可以用Package
+
+   <kbd>Render-Pipeline.Lightweight</kbd>
+
+或者
+
+2. 先将tilemap的material换成预置的`Default.Diffuse`
+3. 然后可以在`Hierarchy`中新建`Light`
+   1. Directional Light 方向光
+   2. Point Light 点光源
+4. 可以自己添加Material
+   1. 新建Material
+   2. 然后在Shader中选择Sprite-Diffuse就都是散射光
+
+
+
