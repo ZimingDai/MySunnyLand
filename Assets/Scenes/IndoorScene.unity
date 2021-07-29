@@ -9672,6 +9672,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8182565197458153748, guid: 8b2eb14914d9548bda2934c0bd03375d, type: 3}
+      propertyPath: jumpForce
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182565197458153748, guid: 8b2eb14914d9548bda2934c0bd03375d, type: 3}
       propertyPath: ground.m_Bits
       value: 512
       objectReference: {fileID: 0}
