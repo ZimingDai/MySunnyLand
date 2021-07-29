@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator anim;
-    
+
     public LayerMask ground;
     public Collider2D topColl;
     public Collider2D coll;
@@ -25,57 +25,61 @@ public class PlayerController : MonoBehaviour
     public Text CherryNum;
     public Text GemNum;
 
-    private bool isHurt;// default is false
-    
+    private bool isHurt; // default is false
+
     void Start()
     {
         //the game begin, import the things to rb,anim
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        
     }
+
     void FixedUpdate()
     {
         if (!isHurt)
-        { 
+        {
             Movement();
         }
+
         SwitchAnim();
+        GemNum.text = gemNum.ToString();
+        CherryNum.text = cherryNum.ToString();
+    }
+
+    private void Update()
+    {
+        Jump();
+        Crouch();
+        
     }
 
     void Movement()
     {
-        float horizontalMove = Input.GetAxis("Horizontal");// 直接获得-1 - 1
-        float faceDirection = Input.GetAxisRaw("Horizontal");//直接获得-1，0，1
-        
+        float horizontalMove = Input.GetAxis("Horizontal"); // 直接获得-1 - 1
+        float faceDirection = Input.GetAxisRaw("Horizontal"); //直接获得-1，0，1
+
         //Player move
         if (horizontalMove != 0)
         {
             rb.velocity = new Vector2(horizontalMove * speed * Time.fixedDeltaTime, rb.velocity.y);
             anim.SetFloat("running", math.abs(faceDirection));
         }
+
         if (faceDirection != 0)
         {
             transform.localScale = new Vector3(faceDirection, 1, 1);
         }
-        
-        //Player jump
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
-            anim.SetBool("isJumping", true);
-           
-        }
-        Crouch();
     }
+
     void SwitchAnim()
     {
-        anim.SetBool("isIdle", false);
+        // anim.SetBool("isIdle", false);
 
         if (rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
         {
             anim.SetBool("isFalling", true);
         }
+
         if (anim.GetBool("isJumping"))
         {
             if (rb.velocity.y < 0)
@@ -83,21 +87,22 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isFalling", true);
                 anim.SetBool("isJumping", false);
             }
-        }else if (isHurt)
+        }
+        else if (isHurt)
         {
             anim.SetBool("isHurt", true);
             anim.SetFloat("running", 0);
             if (math.abs(rb.velocity.x) < 0.1f)
             {
                 anim.SetBool("isHurt", false);
-                anim.SetBool("isIdle", true);
+                // anim.SetBool("isIdle", true);
                 isHurt = false;
-            }   
+            }
         }
         else if (coll.IsTouchingLayers(ground))
         {
             anim.SetBool("isFalling", false);
-            anim.SetBool("isIdle", true);
+            // anim.SetBool("isIdle", true);
         }
     }
 
@@ -107,24 +112,26 @@ public class PlayerController : MonoBehaviour
         // 收集樱桃
         if (collision.CompareTag("Collection"))
         {
-            Destroy(collision.gameObject);//销毁游戏体
-            cherryNum += 1;
-            CherryNum.text = cherryNum.ToString();
+            //Destroy(collision.gameObject);//销毁游戏体
+            //cherryNum += 1;
+            collision.GetComponent<Animator>().Play("got");
+            //CherryNum.text = cherryNum.ToString();
         }
         else if (collision.CompareTag("Gem_collection"))
         {
-            Destroy(collision.gameObject);
-            gemNum += 1;
-            GemNum.text = gemNum.ToString();
+            //Destroy(collision.gameObject);
+            //gemNum += 1;
+            collision.GetComponent<Animator>().Play("got");
+            //GemNum.text = gemNum.ToString();
         }
 
         if (collision.CompareTag("DeadLine"))
         {
             GetComponent<AudioSource>().enabled = false;
-           Invoke("Restart", 1f); 
+            Invoke("Restart", 1f);
         }
     }
-    
+
     // destroy enemies
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -136,11 +143,13 @@ public class PlayerController : MonoBehaviour
                 enemy.JumpOn();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
                 anim.SetBool("isJumping", true);
-            } else if (transform.position.x < collision.gameObject.transform.position.x)
+            }
+            else if (transform.position.x < collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(-8, rb.velocity.y);
                 isHurt = true;
-            } else if (transform.position.x > collision.gameObject.transform.position.x)
+            }
+            else if (transform.position.x > collision.gameObject.transform.position.x)
             {
                 rb.velocity = new Vector2(8, rb.velocity.y);
                 isHurt = true;
@@ -149,7 +158,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Crouch()
-    // TODO:有问题！逻辑怪怪的
+        // TODO:有问题！逻辑怪怪的
     {
         if (!Physics2D.OverlapCircle(cellingCheck.position, 0.3f, ground))
         {
@@ -158,7 +167,8 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("isCrouch", true);
                 // 被启用
                 topColl.enabled = false;
-            } else
+            }
+            else
             {
                 anim.SetBool("isCrouch", false);
                 topColl.enabled = true;
@@ -169,5 +179,25 @@ public class PlayerController : MonoBehaviour
     private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void Jump()
+    {
+        //Player jump
+        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
+            anim.SetBool("isJumping", true);
+        }
+    }
+
+    public void Ch_Count()
+    {
+        cherryNum++;
+    }
+
+    public void Gem_Count()
+    {
+        gemNum++;
     }
 }
